@@ -147,7 +147,7 @@ export default class Game {
                 this.numOfRocks = 3;
 
                 this.allBugs = Enemy.createMultiple(this.numOfBugs, this.numRows);
-                this.allGems = Gem.createMultiple(this.numCols, this.winWidth, this.gemColor, this.numCols);
+                this.allGems = Gem.createMultiple(this.numCols-1, this.winWidth, this.gemColor, this.numCols);
                 this.allRocks = Rock.createMultiple(this.numOfRocks, this.winWidth, this.numRows, this.numCols);
             
                 for (let bug of this.allBugs) {
