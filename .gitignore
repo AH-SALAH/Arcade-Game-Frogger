@@ -1,0 +1,21 @@
+.DS_Store
+.htmlhintrc
+.stylelintrc
+.eslintrc.json
+node_modules/
+dist/
+dist*/
+docs_*/
+#.gitignore
+#.gitattributes
+npm-debug.log
+yarn-error.log
+
+*bk.*
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

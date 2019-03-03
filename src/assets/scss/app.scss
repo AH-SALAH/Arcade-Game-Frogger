@@ -1,0 +1,403 @@
+/**
+* @author Ahmed Salah
+* @github AH-SALAH
+* @create date 2019-01-25 20:07:20
+* @modify date 2019-01-25 20:09:34
+* @desc app scss
+* @Copyright (c) 2019
+*/
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//  ad88888ba                       88  88                            
+// d8"     "8b  ,d                  88  ""                            
+// Y8,          88                  88                                
+// `Y8aaaaa,  MM88MMM  8b       d8  88  88  8b,dPPYba,    ,adPPYb,d8  
+//   `"""""8b,  88     `8b     d8'  88  88  88P'   `"8a  a8"    `Y88  
+//         `8b  88      `8b   d8'   88  88  88       88  8b       88  
+// Y8a     a8P  88,      `8b,d8'    88  88  88       88  "8a,   ,d88  
+//  "Y88888P"   "Y888      Y88'     88  88  88       88   `"YbbdP"Y8  
+//                         d8'                            aa,    ,88  
+//                        d8'                              "Y8bbdP"   
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// @import "./layout/variables";
+// @import "./layout/mixins";
+
+//================================
+//// Option A: Include all of Bootstrap
+// @import "~bootstrap/scss/bootstrap";
+
+//// Option B: Include parts of Bootstrap
+//// Those are Required
+// @import "~bootstrap/scss/functions";
+// @import "~bootstrap/scss/variables";
+// @import "~bootstrap/scss/mixins";
+
+//// Those are Optional
+// @import "~bootstrap/scss/reboot";
+// @import "~bootstrap/scss/type";
+// @import "~bootstrap/scss/images";
+// @import "~bootstrap/scss/code";
+// @import "~bootstrap/scss/grid";
+
+// ===============================
+// import animate animation
+// @import "./node_modules/animate-sass/animate";
+//================================
+// import All fontawesome
+
+// @import url("https://use.fontawesome.com/releases/v5.1.0/css/all.css");
+
+//================================
+// $fa-font-path: "./fonts/" !default; //customize fonts path
+//=================================
+// Import individual fontawesome files
+
+// @import "./fontawesome/fa-regular.scss";
+// @import "./fontawesome/fa-solid.scss";
+// @import "./fontawesome/fa-brands.scss";
+// @import "./fontawesome/fontawesome.scss";
+
+//================================
+// import some ggl fonts
+// @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:100,300,400");
+
+
+// body{
+//     overflow-x: hidden;
+// }
+
+// ----------------------------------
+// customize bootstrap
+// .card-columns {
+//     @include media-breakpoint-up(md) {
+//         column-count: 4;
+//     }
+// }
+
+// @include media-breakpoint-only(xs) {
+//     .text-xs-center{
+//         text-align: center!important;
+//     }
+// }
+
+//-----------------------------------
+//game css
+
+html {
+	box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	// background: #ffffff url('../img/geometry2.png');
+    font-family: 'Coda', cursive;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'coda', 'Open Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+}
+
+button{
+    font-size: 2em;
+    outline-width: 0;
+}
+a,button{
+    cursor: pointer;
+}
+
+
+.container{
+    width: 100%;
+    // height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    flex: 0 0 35%;
+    // margin-top: -3%;
+
+    .canvas-header{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    canvas{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// .modal-container{
+//     display: none;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     flex-wrap: wrap;
+//     width: 100%;
+//     height: 100%;
+//     position: fixed;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     background-color: rgba(0, 0, 0, 0.5);
+
+//     &.open{
+//         display: flex;
+//     }
+
+//     .modal-close{
+//         font-size: 2em;
+//     }
+
+//     .modal-body{
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//         width: 100%;
+//         height: 100%;
+//         background-color: rgba(255,255,255,0.9);
+//         text-align: center;
+//         // padding: 2em;
+//         // overflow-y: auto;
+//         @include opacity(0);
+
+//         // &.close{
+            
+//         // }
+//         .winning-template{
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: stretch;
+//             align-items: center;
+//             width: 100%;
+//             position: absolute;
+//             top: 0;
+//             bottom: 0;
+//             overflow: auto;
+//             padding: 2em;
+            
+//             h1{
+//                 color: #02f0dc;
+//                 text-shadow: 0px 3px 20px forestgreen;
+//             }
+
+//             h1::first-letter {
+//                 font-size: 2em;
+//             }
+
+//             // i{
+//             //     color: gold;
+//             // }
+
+//             .omedetou{
+//                 display: flex;
+//                 flex-direction: row;
+//                 width: 50%;
+//                 justify-content: center;
+//                 align-items: center;
+//                 flex: 0 0 10%;
+
+                
+//                 .stars > i{
+//                     color: gold;
+//                     margin: 0 15px;
+//                     text-shadow: 1px 1px 1px darkred;
+//                 }
+
+//                 .result{
+//                     position: absolute;
+//                     left: 2%;
+//                     top: 4%;
+//                     background-color: rgba(255,255,255,0.8);
+//                     padding: 1%;
+//                     display: flex;
+//                     flex-direction: column;
+//                     justify-content: space-between;
+//                     align-items: center;
+//                     border-top: 3px solid gold;
+//                     box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+//                     width: 20%;
+
+//                     .data{
+//                         display: flex;
+//                         flex-direction: row;
+//                         justify-content: space-between;
+//                         align-items: center;
+//                         width: 100%;
+//                         border-bottom: 1px solid rgba(0,0,0,0.1);
+//                         padding: 2%;
+
+//                         &:last-child{
+//                             border-bottom: 0 none;
+//                         }
+
+//                         i.fa-star{
+//                             color: gold;
+//                         }
+//                         i.fa-stopwatch{
+//                             color: crimson;
+//                         }
+//                     }
+
+//                     // .moves-count{
+                        
+//                     // }
+//                     // .num-of-stars{
+
+//                     // }
+//                     // .time{
+
+//                     // }
+//                 }
+                
+//             }
+            
+//             h2:first-of-type {
+//                 color: crimson;
+//                 letter-spacing: 1em;
+//                 text-shadow: 0px -3px 0px mintcream;
+//             }
+
+//             img.lazyload{
+//                 max-width: 100%;
+//                 @include opacity(0);
+//                 animation: scale-it 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 2s forwards;
+
+//                 @keyframes scale-it {
+//                     from{@include opacity(0); @include scale(0); @include border-radius(50%);}
+//                     to{@include opacity(1); @include scale(1); @include border-radius(0);}
+//                 }
+
+//             }
+//         }
+
+//         .modal-start-btn{
+//             @include border-radius(50%);
+//             background-color: #02f0dc;
+//             color: #333f42;
+//             width: 200px;
+//             height: 200px;
+//             padding: 3em 0;
+//             line-height: 0;
+//             text-align: center;
+//             border: 3px solid #fff;
+//             transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+//             &:hover{
+//                 color: #fff;
+//                 background-color: crimson;
+//                 @include border(1px solid #fff);
+//             }
+//         }
+
+//         .timeout > h2 > i{
+//             color: crimson;
+//         }
+//     }
+// }
+
+
+// ===============================================
+// To overwrite used animate-sass animation to support opacity filter alpha
+
+// @if $use-bounceInDown == true {
+
+// 	@-webkit-keyframes bounceInDown {
+// 		0% {
+// 			@include opacity(0);
+// 			-webkit-transform: translateY(-$base-distance-big * 2);
+// 		}
+
+// 		60% {
+// 			@include opacity(1);
+// 			-webkit-transform: translateY($base-distance * 3);
+// 		}
+
+// 		80% {
+//             @include opacity(1);
+// 			-webkit-transform: translateY(-$base-distance);
+// 		}
+
+// 		100% {
+//             @include opacity(1);
+// 			-webkit-transform: translateY(0);
+// 		}
+// 	}
+
+// 	@keyframes bounceInDown {
+// 		0% {
+// 			@include opacity(0);
+// 			transform: translateY(-$base-distance-big * 2);
+// 		}
+
+// 		60% {
+// 			@include opacity(1);
+// 			transform: translateY($base-distance * 3);
+// 		}
+
+// 		80% {
+//             @include opacity(1);
+// 			transform: translateY(-$base-distance);
+// 		}
+
+// 		100% {
+//             @include opacity(1);
+// 			transform: translateY(0);
+// 		}
+//     }
+// }
+
+
+// @if $use-bounceOutUp == true {
+
+// 	@-webkit-keyframes bounceOutUp {
+// 		0% {
+// 			-webkit-transform: translateY(0);
+// 		}
+
+// 		20% {
+// 			@include opacity(1);
+// 			-webkit-transform: translateY($base-distance * 2);
+// 		}
+
+// 		100% {
+// 			@include opacity(0);
+// 			-webkit-transform: translateY(-$base-distance-big * 2);
+// 		}
+// 	}
+
+// 	@keyframes bounceOutUp {
+// 		0% {
+// 			transform: translateY(0);
+// 		}
+
+// 		20% {
+// 			@include opacity(1);
+// 			transform: translateY($base-distance * 2);
+// 		}
+
+// 		100% {
+// 			@include opacity(0);
+// 			transform: translateY(-$base-distance-big * 2);
+// 		}
+// 	}
+
+// }

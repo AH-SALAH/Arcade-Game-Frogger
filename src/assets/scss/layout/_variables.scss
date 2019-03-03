@@ -1,0 +1,50 @@
+/**
+ * @author Ahmed Salah
+ * @github AH-SALAH
+ * @create date 2018-10-31 16:02:50
+ * @modify date 2018-10-31 16:02:50
+ * @desc [description]
+*/
+
+
+// Overwrite Bootstrap Body Colors
+// $body-bg:lightslategrey;
+// $body-color:mediumseagreen;
+
+// $blue:    #007bff !default;
+// $indigo:  #6610f2 !default;
+// $purple:  #6f42c1 !default;
+// $pink:    #e83e8c !default;
+// $red:     #dc3545 !default;
+// $orange:  #fd7e14 !default;
+// $yellow:  #ffc107 !default;
+// $green:   #28a745 !default;
+// $teal:    #20c997 !default;
+// $cyan:    #17a2b8 !default;
+
+//site custom
+$prime: #02b3e4;
+$second: #2d3c49;
+$third: #7d97ad;
+
+//// Overwrite Bootstrap Theme Colors
+// $theme-colors: (
+//     "primary":    $indigo,
+//     "secondary":  $purple,
+//     "success":    $teal,
+//     "info":       $cyan,
+//     "warning":    $yellow,
+//     "danger":     $red,
+//     // "light":      $light,
+//     // "dark":       $dark
+// );
+
+// These override the default vars inside animate-sass/helpers/_settings.scss
+// $use-flip: true;
+// $use-flipInY: true;
+// $use-flipOutY: true;
+$use-tada: true;
+$use-shake: true;
+$use-pulse : true;
+$use-bounceInDown: true;
+$use-bounceOutUp: true;

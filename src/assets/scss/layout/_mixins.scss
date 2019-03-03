@@ -1,0 +1,301 @@
+// ***************************** //
+		// BG  MIXIN
+// ***************************** //
+
+@mixin bg-color($val...) {
+  background-color: $val;
+}
+
+@mixin bg-img($url) {
+  background-image: url($url);
+}
+
+@mixin bg($color,$url,$repeat,$type,$pos,$screen-pos) {
+  background: $color url($url) $repeat $type $pos /$screen-pos;
+
+}
+
+@mixin bg-linear($color, $args...) {
+  background: $color;
+  background: -webkit-linear-gradient($args);
+  background: linear-gradient($args);
+}
+
+@mixin bg-radial($color, $args...) {
+  background: $color;
+  background: -webkit-radial-gradient($args);
+  background: radial-gradient($args);
+}
+
+@mixin bg-color-rgba($args...){
+	background-color:rgba($args...);
+}
+
+@mixin color-rgba($args...){
+	color:rgba($args...);
+}
+
+
+// ***************************** //
+		// PSEUDO  MIXIN
+// ***************************** //
+
+@mixin pseudo($content:'',$position: absolute,$top: 0,$right: 0,$bottom: 0,$left: 0,$bg: rgba(0,0,0,0),$font-family: fontAwesome ) {
+	content: $content;
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	background: $bg;
+	font-family: $font-family;
+}
+
+
+// ***************************** //
+	/* mixin for multiline */
+// ***************************** //
+
+
+@mixin multiLineEllipsis($lineHeight: 1.1em, $lineCount: 1, $bgColor: white){
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount; 
+  text-align: justify;
+  margin-right: -0.1em;
+  padding-right: 1em;
+  word-spacing: -1.2px;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}
+
+
+// ***************************** //
+		// BORDERS  MIXIN
+// ***************************** //
+
+@mixin border($side,$args...) {
+	#{$side}: $args;
+
+  @if $args == none {
+    @include border(border,0 none);
+  }
+
+}
+
+@mixin border-radius($radius...) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+
+  @if $radius == 0 {
+    @include border-radius(0);
+  }
+
+}
+
+// ***************************** //
+		// TRANSFORM  MIXIN
+// ***************************** //
+
+// generic transform
+@mixin generic-transform($transforms) {
+	-webkit-transform: $transforms;
+	-moz-transform: $transforms;
+	-ms-transform: $transforms;
+	-o-transform: $transforms;
+	transform: $transforms;
+}
+
+// rotate3d
+@mixin rotate3d ($pres,$prop1,$prop2,$prop3,$deg ) {
+	@include generic-transform( perspective($pres) rotate3d(#{$prop1},#{$prop2},#{$prop3},#{$deg}deg));
+}
+
+// rotate
+@mixin rotate ($deg) {
+	@include generic-transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+	 @include generic-transform(scale($scale));
+} 
+
+// translate
+@mixin translate ($x, $y) {
+	@include generic-transform(translate($x, $y));
+}
+
+// skew
+@mixin skew ($x, $y) {
+	@include generic-transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//transform origin
+@mixin transform-origin ($origin...) {
+    -webkit-transform-origin: $origin;
+	-moz-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	-o-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+//transform style
+@mixin transform-style ($style...) {
+    -webkit-transform-style: $style;
+	-moz-transform-style: $style;
+	-ms-transform-style: $style;
+	-o-transform-style: $style;
+    transform-style: $style;
+}
+
+//transform perspective
+@mixin perspective ($perspective...) {
+    -webkit-perspective: $perspective;
+	-moz-perspective: $perspective;
+	-ms-perspective: $perspective;
+	-o-perspective: $perspective;
+    perspective: $perspective;
+}
+
+// ***************************** //
+		// FILTER  MIXIN
+// ***************************** //
+
+@mixin filter($args...) {
+  	-webkit-filter: $args;
+	-moz-filter: $args;
+	-ms-filter: $args;
+	-o-filter: $args;
+	filter: $args;
+
+  @if $args == none {
+    @include filter(none);
+  }
+
+}
+
+// ***************************** //
+		// OPACITY  MIXIN
+// ***************************** //
+
+@mixin opacity($opacity) {
+opacity: $opacity;
+filter: alpha(opacity=$opacity*100);
+}
+
+
+// ***************************** //
+		// BOX-SHADOW  MIXIN
+// ***************************** //
+
+@mixin box-shadow($args...){
+	-webkit-box-shadow: $args;
+	-moz-box-shadow: $args;
+	-ms-box-shadow: $args;
+	-o-box-shadow: $args;
+	box-shadow: $args;
+  
+  @if $args == none {
+    @include box-shadow(none);
+  }
+
+}
+
+
+// ***************************** //
+		// TRANSITION  MIXIN
+// ***************************** //
+
+// generic transition
+@mixin transition($transition...) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-ms-transition: $transition;
+	-o-transition: $transition;
+	transition: $transition;
+}
+
+// Transition all-in-one shorthand
+// @mixin transition($property: all,$duration: 0.2s,$function: ease,$delay: 0s) {
+//   @include generic-transition(compact($property $duration $function $delay));
+// }
+
+
+// ***************************** //
+		// ANIMATION  MIXIN
+// ***************************** //
+
+@mixin animation($name,$args...) {
+	-webkit-animation: $name $args;
+	-moz-animation: $name $args;
+	-ms-animation: $name $args;
+	-o-animation: $name $args;
+	animation: $name $args;
+}
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+	 @content; 
+	}
+	@-moz-keyframes #{$name} {
+	 @content; 
+	}
+	@-ms-keyframes #{$name} { 
+		@content; 
+	}
+	@-o-keyframes #{$name} { 
+		@content; 
+	}
+	@keyframes #{$name} {
+	 @content; 
+	}
+}
+
+
+// ***************************** //
+		// MEDIA  MIXIN
+// ***************************** //
+
+@mixin media($point) {
+	@if $point == XXL {
+	@media (min-width: 1600px) { @content; }
+	}
+	@else if $point == XL {
+	@media (max-width: 1350px) { @content; }
+	}
+	@else if $point == L {
+	@media (max-width: 1200px) { @content; }
+	}
+	@else if $point == M {
+	@media (max-width: 850px) { @content; }
+	}
+	@else if $point == S {
+	@media (max-width: 768px) { @content; }
+	}
+	@else if $point == XS {
+	@media (max-width: 650px) { @content; }
+	}
+	@else if $point == XXS {
+	@media (max-width: 400px) { @content; }
+	}
+}
+
+
